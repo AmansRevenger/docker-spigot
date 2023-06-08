@@ -15,27 +15,29 @@ fi
 # fucntion to load correct java version 
 
 function load_java() {
-
   case "$1" in
-    latest | 1.19*)
+    latest | 1.19* | 1.20* )
       /usr/local/bin/set_java_ver 18
       ;;
   
-    1.18*)
+    1.18* )
       /usr/local/bin/set_java_ver 17
       ;;
 
-    1.17*)
+    1.17* )
       /usr/local/bin/set_java_ver 16
       ;;
 
-    *)
-      /usr/local/bin/set_java_ver 11
+    1.8*)
+      /usr/local/bin/set_java_ver 8
       ;;
 
+    * )
+      /usr/local/bin/set_java_ver 11
+      ;;
   esac
-
 }
+
 
 # get current version of minecraft
 
